@@ -12,7 +12,24 @@ userForm.addEventListener('submit', function(event) {
     console.log('Andata a segno');
 //Collezione dati
 const name = nameInput.value;
-const distance = Numb(distanceInput.value);
-const age = Numb(ageSelect.value);
+const distance = Number(distanceInput.value);
+const age = ageSelect.value;
 console.log(name, distance, age)
+//Calcolo prezzo base
+let price = distance * 0.21;
+let discount = 0;
+//Applicazione sconti
+if(age === 'minorenne') {
+    discount = price * 0.80
+} else if (age === 'over') {
+    discount  = price * 0.60
+}
+const finalPrice = price - discount;
+
+console.log(`Il prezzo del biglietto è ${finalPrice.toFixed(2)} €`);
 })
+
+/* Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
+    il prezzo del biglietto è definito in base ai km (0.21 € al km)
+    va applicato uno sconto del 20% per i minorenni
+    va applicato uno sconto del 40% per gli over 65. */
