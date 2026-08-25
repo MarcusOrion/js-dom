@@ -15,12 +15,10 @@ const displayPrice = document.getElementById('display-cost');
 const userForm = document.getElementById('user-form');
 userForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    console.log('Andata a segno');
 //Collezione dati
 const name = nameInput.value;
 const distance = Number(distanceInput.value);
 const age = ageSelect.value;
-console.log(name, distance, age)
 //Calcolo prezzo base
 let price = distance * 0.21;
 let discount = 0;
@@ -35,8 +33,6 @@ if(age === 'minorenne') {
     displayOffer.innerHTML = 'Biglietto Standard';
 }
 const finalPrice = price - discount;
-
-console.log(`Il prezzo del biglietto è ${finalPrice.toFixed(2)} €`);
 //Calcolo carrozza (randomico)
 let carrozza = Math.floor(Math.random()*10 + 1);
 //Calcolo Codice CP (randomico)
@@ -46,4 +42,12 @@ displayName.innerHTML = name;
 displayWagon.innerHTML = carrozza;
 displayCode.innerHTML = codice;
 displayPrice.innerHTML = finalPrice.toFixed(2) + '€';
+})
+//Cancella il biglietto generato quando si preme il tasto 'Annulla'
+userForm.addEventListener('reset', function(){
+displayName.innerHTML = '';
+displayWagon.innerHTML = '';
+displayCode.innerHTML = '';
+displayPrice.innerHTML = '';
+displayOffer.innerHTML = '';
 })
