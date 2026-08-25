@@ -16,7 +16,7 @@
 </head>
 <body>
     <header class="container mt-5 text-center">
-        <h1>Calcola il prezzo del tuo biglietto</h1>
+        <h2 class="h1">Calcola il prezzo del tuo biglietto</h2>
     </header>
     <main class="container my-5">
     <form id="user-form">
@@ -28,7 +28,7 @@
         <!-- Km da percorrere -->
         <div class="mb-3">
             <label for="distance" class="form-label">Km da percorrere</label>
-            <input type="text" class="form-control" id="distance" required>
+            <input type="number" class="form-control" id="distance" required>
         </div>
         <!-- Età -->
         <select id="age" class="form-select" required>
@@ -38,9 +38,34 @@
 	    </select>
         <div class="text-center">
         <button type="submit" class="btn btn-primary mt-3">Genera</button>
-        <button type="submit" class="btn btn-secondary mt-3 ms-3">Annulla</button>
+        <button type="reset" class="btn btn-secondary mt-3 ms-3">Annulla</button>
         </div>
     </form>
-    </form>
+    <h2 class="h1">Il tuo biglietto</h2>
+    <div class="text-left">
+    <h3 class="h2">Dettaglio passeggeri</h3>
+    </div>
+    <div class="col">
+        <div>
+            <h3 class="h2">NOME PASSEGGERO</h3>
+            <span id="display-name"></span>
+        </div>
+        <div>
+        <h4>Offerta</h4>
+        <span id="display-offer"></span>
+        </div>
+        <div>
+        <h4>Carrozza</h4>
+        <span id="display-wagon"></span>
+        </div>
+        <div>
+        <h4>Codice CP</h4>
+        <span id="display-cp"></span>
+        </div>
+        <div>
+        <h4>Costo bilgietto</h4>
+        <span id="display-cost"></span>
+        </div>
+    </div>
 </body>
 </html>
