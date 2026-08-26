@@ -14,6 +14,20 @@ hr {
 body {
     background-color: #EBF3FA;
 }
+.ticket-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.ticket-layout > section {
+    width: 100%;
+    max-width: none;
+    margin: 0 !important;
+    padding: 2rem;
+}
 i {
     font-size: 1.5rem;
     margin-right: 3px;
@@ -23,4 +37,9 @@ div.naviagiotn_area {
 }
 div.personal_area {
     margin-right: 30px;
+}
+@media (max-width: 768px) {
+    .ticket-layout {
+        grid-template-columns: 1fr;
+    }
 }

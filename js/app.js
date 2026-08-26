@@ -5,7 +5,7 @@
 const nameInput = document.getElementById('name');
 const distanceInput = document.getElementById('distance');
 const ageSelect = document.getElementById('age');
-
+const card = document.querySelector('.card');
 const displayName = document.getElementById('display-name');
 const displayOffer = document.getElementById('display-offer');
 const displayWagon = document.getElementById('display-wagon');
@@ -42,6 +42,8 @@ displayName.innerHTML = name;
 displayWagon.innerHTML = carrozza;
 displayCode.innerHTML = codice;
 displayPrice.innerHTML = finalPrice.toFixed(2) + '€';
+//Aggiunta comparsa output ticket al click di 'Genera'
+card.classList.remove('d-none');
 })
 //Cancella il biglietto generato quando si preme il tasto 'Annulla'
 userForm.addEventListener('reset', function(){

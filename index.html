@@ -38,8 +38,17 @@
         </div>
     </header>
     <hr>
-    <main class="container my-5 bg-white rounded-4">
+    <!-- Presentazione biglietto -->
+    <main>
+        <div class="d-flex flex-column justify-content-center align-content-center align-self-center mt-3">
+            <h2 class="h1 fw-bold text-center">Acquista il tuo biglietto online</h2>
+            <p class="text-center">Veloce, sicuro e senza commissioni. Inserisci i tuoi dati per generare immediatamente il tuo titolo di viaggio elettronico.</p>
+        </div>
+        <div class="ticket-layout">
+        <!-- Form input dati -->
+    <section class="container my-5 bg-white rounded-4">
     <form id="user-form">
+        <div class="row">
         <!-- Nome -->
         <div class="mb-3">
             <label for="name" class="form-label">Nome Cognome</label>
@@ -57,12 +66,17 @@
             <option value="over">Over 65</option>
 	    </select>
         <!-- Bottoni -->
-        <div class="text-center">
-        <button type="submit" class="btn btn-primary mt-3">Genera</button>
-        <button type="reset" class="btn btn-secondary mt-3 ms-3">Annulla</button>
-        </div>
-    </form>
-    </main>
+         <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-3">Genera</button>
+            <button type="reset" class="btn btn-secondary mt-3 ms-3">Annulla</button>
+            </div>
+            </div>
+        </form>
+</section>
+    <!-- Form output dati -->
+    <section class="card container my-5 bg-white rounded-4 d-none">
+    <div class="col">
+        <div class="row">
     <h2 class="h1">Il tuo biglietto</h2>
     <div class="text-left">
     <h3 class="h2">Dettaglio passeggeri</h3>
@@ -89,5 +103,10 @@
         <span id="display-cost"></span>
         </div>
     </div>
+    </div>
+    </div>
+    </section>
+        </div>
+    </main>
 </body>
 </html>
