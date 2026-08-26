@@ -3,10 +3,24 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
+header {
+    padding-bottom: 15px;
+}
 hr {
+    border: 0;
     border-top: 2px solid black;
-    margin-top: 0px;
+    margin: 0px;
 }
 body {
     background-color: #EBF3FA;
+}
+i {
+    font-size: 1.5rem;
+    margin-right: 3px;
+}
+div.naviagiotn_area {
+    margin-bottom: 10px;
+}
+div.personal_area {
+    margin-right: 30px;
 }
