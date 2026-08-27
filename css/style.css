@@ -75,6 +75,17 @@ button {
   border-radius: 15px;
   padding: 4px 15px;
 }
+#destination_graph {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.destination-line {
+  flex: 1;
+  height: 1px;
+  background-color: blue;
+  margin: 0 10px;
+}
 @media (max-width: 768px) {
   .ticket-layout {
     grid-template-columns: 1fr;
