@@ -60,6 +60,21 @@ button {
   margin-left: 11px;
   width: 150px;
 }
+#display-offer {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 0.5px grey;
+  background-color: #eaedf1;
+  color: rgb(43, 43, 43);
+  border-radius: 15px;
+  padding: 4px 15px;
+}
 @media (max-width: 768px) {
   .ticket-layout {
     grid-template-columns: 1fr;

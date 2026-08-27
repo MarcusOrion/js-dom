@@ -25,12 +25,12 @@ userForm.addEventListener("submit", function (event) {
   //Applicazione sconti
   if (age === "minorenne") {
     discount = price * 0.2;
-    displayOffer.innerHTML = "Biglietto Minorenne";
+    displayOffer.innerHTML = "Minorenne";
   } else if (age === "over") {
     discount = price * 0.4;
-    displayOffer.innerHTML = "Biglietto Over 65";
+    displayOffer.innerHTML = "Over 65";
   } else {
-    displayOffer.innerHTML = "Biglietto Standard";
+    displayOffer.innerHTML = "Standard";
   }
   const finalPrice = price - discount;
   //Calcolo carrozza (randomico)
@@ -44,6 +44,7 @@ userForm.addEventListener("submit", function (event) {
   displayPrice.innerHTML = finalPrice.toFixed(2) + "€";
   //Aggiunta comparsa output ticket al click di 'Genera'
   card.classList.remove("d-none");
+  displayOffer.classList.remove("d-none");
 });
 //Cancella il biglietto generato quando si preme il tasto 'Annulla'
 userForm.addEventListener("reset", function () {
