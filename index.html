@@ -1,112 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="biglietto, prezzo biglietto, treno">
-    <meta author="Marco Manvati ( MarcusOrion)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="biglietto, prezzo biglietto, treno" />
+    <meta author="Marco Manvati ( MarcusOrion)" />
     <!-- Google Font-->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-     <!-- Bootstrap -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-     <!-- CSS -->
-      <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
     <!-- Bootstrap Icon -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-     <!-- JavaScript -->
-     <script src="js/app.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- JavaScript -->
+    <script src="js/app.js" defer></script>
 
     <title>Calcolo prezzo del biglietto (js-dom)</title>
-</head>
- <body>
+  </head>
+  <body>
     <!-- EurorRail-->
     <header class="d-flex align-items-center bg-white">
-            <i class="bi bi-train-front text-primary fs-1 ms-3"></i>
-            <h1 class="ms-3 mt-3 font-inter fw-bold">EuroRail Express</h1> 
-    <!-- Area di navigazione -->
-        <div class="d-flex justify-content-center align-items-center flex-grow-1 mt-3 navigation_area">
-            <a href="#" class="text-decoration-none text-dark fs-3 mx-3">Home</a>
-            <a href="#" class="text-decoration-none text-dark fs-3 mx-3">Orari</a>
-            <a href="#" class="text-decoration-none text-dark fs-3 mx-3">Biglietti</a>
-        </div>
-        <!-- Area riservata -->
-        <div class="d-flex align-items-center personal_area mt-3">
-            <h2 class="h4 me-2 mb-0">Area riservata</h2>
-            <i class="bi bi-person-circle position-relativ" style="top: 1px;"></i>
-        </div>
+      <i class="bi bi-train-front text-primary fs-1 ms-3"></i>
+      <h1 class="ms-3 mt-3 font-inter fw-bold">EuroRail Express</h1>
+      <!-- Area di navigazione -->
+      <div
+        class="d-flex justify-content-center align-items-center flex-grow-1 mt-3 navigation_area"
+      >
+        <a href="#" class="text-decoration-none text-dark fs-3 mx-3">Home</a>
+        <a href="#" class="text-decoration-none text-dark fs-3 mx-3">Orari</a>
+        <a href="#" class="text-decoration-none text-dark fs-3 mx-3"
+          >Biglietti</a
+        >
+      </div>
+      <!-- Area riservata -->
+      <div class="d-flex align-items-center personal_area mt-3">
+        <h2 class="h4 me-2 mb-0">Area riservata</h2>
+        <i class="bi bi-person-circle position-relativ" style="top: 1px"></i>
+      </div>
     </header>
-    <hr>
+    <hr />
     <!-- Presentazione biglietto -->
     <main>
-        <div class="d-flex flex-column justify-content-center align-content-center align-self-center mt-3">
-            <h2 class="h1 fw-bold text-center">Acquista il tuo biglietto online</h2>
-            <p class="text-center">Veloce, sicuro e senza commissioni. Inserisci i tuoi dati per generare immediatamente il tuo titolo di viaggio elettronico.</p>
-        </div>
-        <div class="ticket-layout">
+      <div
+        class="d-flex flex-column justify-content-center align-content-center align-self-center mt-3"
+      >
+        <h2 class="h1 fw-bold text-center">Acquista il tuo biglietto online</h2>
+        <p class="text-center">
+          Veloce, sicuro e senza commissioni. Inserisci i tuoi dati per generare
+          immediatamente il tuo titolo di viaggio elettronico.
+        </p>
+      </div>
+      <div class="ticket-layout">
         <!-- Form input dati -->
-    <section class="container my-5 bg-white rounded-4">
-    <form id="user-form">
-        <div class="row">
-        <!-- Nome -->
-        <div class="mb-3">
-            <label for="name" class="form-label">Nome Cognome</label>
-            <input type="text" class="form-control" id="name" required>
-        </div>
-        <!-- Km da percorrere -->
-        <div class="mb-3">
-            <label for="distance" class="form-label">Km da percorrere</label>
-            <input type="number" class="form-control" id="distance" required>
-        </div>
-        <!-- Età -->
-        <select id="age" class="form-select" required>
-            <option value="maggiorenne">Maggiorenne</option>
-            <option value="minorenne">Minorenne</option>
-            <option value="over">Over 65</option>
-	    </select>
-        <!-- Bottoni -->
-         <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-3">Genera</button>
-            <button type="reset" class="btn btn-secondary mt-3 ms-3">Annulla</button>
+        <section class="container my-5 bg-white rounded-4">
+          <form id="user-form">
+            <div class="row">
+              <!-- Nome -->
+              <div class="mb-3">
+                <label for="name" class="form-label">Nome Cognome</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+              <!-- Km da percorrere -->
+              <div class="mb-3">
+                <label for="distance" class="form-label"
+                  >Km da percorrere</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="distance"
+                  required
+                />
+              </div>
+              <!-- Età -->
+              <select id="age" class="form-select" required>
+                <option value="maggiorenne">Maggiorenne</option>
+                <option value="minorenne">Minorenne</option>
+                <option value="over">Over 65</option>
+              </select>
+              <!-- Bottoni -->
+              <div
+                class="d-flex justify-content-end align-items-center gap-2 text-center"
+              >
+                <button type="reset" class="btn btn-secondary mt-3 ms-3">
+                  Annulla
+                </button>
+                <button type="submit" class="btn btn-primary mt-3">
+                  <i class="bi-ticket-perforated"></i>
+                  Genera Biglietto
+                </button>
+              </div>
             </div>
+          </form>
+        </section>
+        <!-- Form output dati -->
+        <section class="card container my-5 bg-white rounded-4 d-none">
+          <div class="col">
+            <div class="row">
+              <h2 class="h1">Il tuo biglietto</h2>
+              <div class="text-left">
+                <h3 class="h2">Dettaglio passeggeri</h3>
+              </div>
+              <div class="col">
+                <div>
+                  <h3 class="h2">NOME PASSEGGERO</h3>
+                  <span id="display-name"></span>
+                </div>
+                <div>
+                  <h4>Offerta</h4>
+                  <span id="display-offer"></span>
+                </div>
+                <div>
+                  <h4>Carrozza</h4>
+                  <span id="display-wagon"></span>
+                </div>
+                <div>
+                  <h4>Codice CP</h4>
+                  <span id="display-cp"></span>
+                </div>
+                <div>
+                  <h4>Costo bilgietto</h4>
+                  <span id="display-cost"></span>
+                </div>
+              </div>
             </div>
-        </form>
-</section>
-    <!-- Form output dati -->
-    <section class="card container my-5 bg-white rounded-4 d-none">
-    <div class="col">
-        <div class="row">
-    <h2 class="h1">Il tuo biglietto</h2>
-    <div class="text-left">
-    <h3 class="h2">Dettaglio passeggeri</h3>
-    </div>
-    <div class="col">
-        <div>
-            <h3 class="h2">NOME PASSEGGERO</h3>
-            <span id="display-name"></span>
-        </div>
-        <div>
-        <h4>Offerta</h4>
-        <span id="display-offer"></span>
-        </div>
-        <div>
-        <h4>Carrozza</h4>
-        <span id="display-wagon"></span>
-        </div>
-        <div>
-        <h4>Codice CP</h4>
-        <span id="display-cp"></span>
-        </div>
-        <div>
-        <h4>Costo bilgietto</h4>
-        <span id="display-cost"></span>
-        </div>
-    </div>
-    </div>
-    </div>
-    </section>
-        </div>
+          </div>
+        </section>
+      </div>
     </main>
-</body>
+  </body>
 </html>
