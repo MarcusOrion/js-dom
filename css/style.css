@@ -82,9 +82,15 @@ button {
 }
 .destination-line {
   flex: 1;
-  height: 1px;
-  background-color: blue;
+  height: 2.5px;
+  background-color: #e2eef9;
   margin: 0 10px;
+}
+.route {
+  color: #cbd6e4;
+  font-size: 14px;
+  font-weight: 560;
+  margin-left: 2px;
 }
 @media (max-width: 768px) {
   .ticket-layout {
