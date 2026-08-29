@@ -142,4 +142,7 @@ ul {
   .ticket-layout {
     grid-template-columns: 1fr;
   }
+  footer {
+    display: none;
+  }
 }
