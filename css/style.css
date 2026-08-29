@@ -113,6 +113,31 @@ button {
   font-weight: bolder;
   font-size: 50px;
 }
+footer {
+  background-color: #021c35;
+}
+.footer_section {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 20px;
+  color: white;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+.footer_logo {
+  margin-right: 30px;
+}
+ul {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  gap: 20px;
+  padding-top: 15px;
+
+  a {
+    text-decoration: none;
+  }
+}
 @media (max-width: 768px) {
   .ticket-layout {
     grid-template-columns: 1fr;

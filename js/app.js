@@ -41,7 +41,7 @@ userForm.addEventListener("submit", function (event) {
   displayName.innerHTML = name;
   displayWagon.innerHTML = carrozza;
   displayCode.innerHTML = codice;
-  displayPrice.innerHTML = finalPrice.toFixed(2) + "€";
+  displayPrice.innerHTML = "€ " + finalPrice.toFixed(2);
   //Aggiunta comparsa output ticket al click di 'Genera'
   card.classList.remove("d-none");
   displayOffer.classList.remove("d-none");
