@@ -12,8 +12,15 @@ hr {
   margin: 0px;
 }
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: #ebf3fa;
 }
+main {
+  flex: 1;
+}
+/*Layout del ticket input form*/
 .ticket-layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -28,17 +35,26 @@ body {
   margin: 0 !important;
   padding: 2rem;
 }
+.ticket-layout:has(> section.d-none) {
+  grid-template-columns: 1fr;
+}
+/* Centra il form */
+.ticket-layout:has(> section.d-none) > section:first-child {
+  max-width: 600px;
+  justify-self: center;
+}
 i {
   font-size: 1.5rem;
   margin-right: -3px;
   margin-top: 4px;
 }
-div.naviagiotn_area {
+div.navigation_area {
   margin-bottom: 10px;
 }
 div.personal_area {
   margin-right: 30px;
 }
+/*Bottoni input form*/
 button {
   display: flex;
 
@@ -56,6 +72,7 @@ button {
     }
   }
 }
+/*Selezionatore età*/
 #age {
   margin-left: 11px;
   width: 150px;
@@ -92,6 +109,7 @@ button {
   font-weight: 560;
   margin-left: 2px;
 }
+/*Container dell'output form*/
 .output_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -113,6 +131,13 @@ button {
   font-weight: bolder;
   font-size: 50px;
 }
+/*Linea tratteggiata*/
+.total-section {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 2px dashed #cbd6e4;
+}
+/*Sezione Footer*/
 footer {
   background-color: #021c35;
 }
@@ -126,6 +151,7 @@ footer {
 }
 .footer_logo {
   margin-right: 30px;
+  margin-bottom: 30px;
 }
 ul {
   display: flex;
