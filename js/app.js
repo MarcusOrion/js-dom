@@ -50,4 +50,6 @@ userForm.addEventListener("reset", function () {
   displayCode.innerHTML = "";
   displayPrice.innerHTML = "";
   displayOffer.innerHTML = "";
+  //Riumuove il form output quando si preme il tasto 'Annulla'
+  card.classList.add("d-none");
 });
